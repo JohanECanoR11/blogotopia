@@ -46,7 +46,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_1,
         date: Date.now(),
-        category: "Lifestyle",
+        category: "Estilo de vida",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -64,7 +64,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_3,
         date: Date.now(),
-        category: "Tecnology",
+        category: "Tecnología",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -73,7 +73,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_4,
         date: Date.now(),
-        category: "Tecnology",
+        category: "Tecnología",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -82,7 +82,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_5,
         date: Date.now(),
-        category: "Lifestyle",
+        category: "Estilo de vida",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -100,7 +100,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_7,
         date: Date.now(),
-        category: "Tecnology",
+        category: "Tecnología",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -109,7 +109,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_8,
         date: Date.now(),
-        category: "Lifestyle",
+        category: "Estilo de vida",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -127,7 +127,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_10,
         date: Date.now(),
-        category: "Lifestyle",
+        category: "Estilo de vida",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -145,7 +145,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_12,
         date: Date.now(),
-        category: "Tecnology",
+        category: "Tecnología",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -163,7 +163,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_14,
         date: Date.now(),
-        category: "Lifestyle",
+        category: "Estilo de vida",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
@@ -172,7 +172,7 @@ export const assets = {
         description: "Lorem Ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el..",
         image: blog_pic_15,
         date: Date.now(),
-        category: "Tecnology",
+        category: "Tecnología",
         author: "Alex Bennett",
         author_img: profile_icon
     }, {
