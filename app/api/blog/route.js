@@ -50,3 +50,5 @@ export async function POST(request) {
 
   return NextResponse.json({success:true, msg:"Blog Añadido"})
 }
+
+// Crear API para eliminar Blogs
