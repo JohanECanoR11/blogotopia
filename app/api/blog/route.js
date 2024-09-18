@@ -10,11 +10,15 @@ const LoadDB = async () => {
 LoadDB();
 
 
-
+// API para obtener todos los blogs
 export async function GET(request) {
-  return NextResponse.json({msg:"API Funcionando"})
+
+  const blogs = await BlogModel.find({});
+
+  return NextResponse.json({blogs})
 }
 
+// API para subir los blogs
 export async function POST(request) {
   const formData = await request.formData();
   const timestamp = Date.now();
