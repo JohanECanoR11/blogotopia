@@ -38,20 +38,12 @@ const page = ({params}) => {
       </div>
     </div>
     <div className="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
-      <Image className='border-4 border-white' src={data.image} width={1280} height={720} alt='' />
-      <h1 className='my-8 text-[26px] font-semibold'>Introducción: </h1>
-      <p>{data.description}</p>
-      <h3 className='my-5 text-[18px] font-semibold'>Paso 1: Autorreflexión y fijación de objetivos</h3>
-      <p className="my-3">Antes de poder gestionar tu estilo de vida, debes tener una idea clara de lo que quieres conseguir. Empieza por reflexionar sobre tus valores, aspiraciones y objetivos a largo plazo.</p>
-      <p className="my-3">Antes de poder gestionar tu estilo de vida, debes tener una idea clara de lo que quieres conseguir. Empieza por reflexionar sobre tus valores, aspiraciones y objetivos a largo plazo.</p>
-      <h3 className='my-5 text-[18px] font-semibold'>Paso 2: Autorreflexión y fijación de objetivos</h3>
-      <p className="my-3">Antes de poder gestionar tu estilo de vida, debes tener una idea clara de lo que quieres conseguir. Empieza por reflexionar sobre tus valores, aspiraciones y objetivos a largo plazo.</p>
-      <p className="my-3">Antes de poder gestionar tu estilo de vida, debes tener una idea clara de lo que quieres conseguir. Empieza por reflexionar sobre tus valores, aspiraciones y objetivos a largo plazo.</p>
-      <h3 className='my-5 text-[18px] font-semibold'>Paso 3: Autorreflexión y fijación de objetivos</h3>
-      <p className="my-3">Antes de poder gestionar tu estilo de vida, debes tener una idea clara de lo que quieres conseguir. Empieza por reflexionar sobre tus valores, aspiraciones y objetivos a largo plazo.</p>
-      <p className="my-3">Antes de poder gestionar tu estilo de vida, debes tener una idea clara de lo que quieres conseguir. Empieza por reflexionar sobre tus valores, aspiraciones y objetivos a largo plazo.</p>
-      <h3 className='my-5 text-[18px] font-semibold'>Conclusión</h3>
-      <p className="my-3">Gestionar tu estilo de vida es un viaje que requiere compromiso y autoconciencia. Siguiendo esta guía paso a paso, puedes tomar las riendas de tu vida y hacer cambios significativos que te lleven a un estilo de vida más equilibrado y satisfactorio. Recuerda que está bien buscar apoyo y orientación de profesionales o mentores a lo largo del camino. Tu bienestar y felicidad merecen el esfuerzo.</p>
+      <Image className='border-4 border-white' src={data.image} width={1280} height={720} alt='' />      
+      <div className='blog-content' dangerouslySetInnerHTML={{__html:data.description}}>
+
+      </div>
+      
+      
       <div className='my-24'>
         <p className='text-black font-semibold my-4'>Comparte este artículo en redes sociales</p>
         <div className='flex'>
