@@ -3,10 +3,11 @@ import axios from 'axios';
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
-
   const [email, setEmail] = useState("");
+  const router = useRouter();
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -16,17 +17,25 @@ const Header = () => {
     if (response.data.success) {
       toast.success(response.data.msg);
       setEmail("");
+    } else {
+      toast.error("Error");
     }
-    else {
-      toast.error("Error")
-    }
+  }
+
+  const handleRedirect = () => {
+    router.push('/addBlog');
   }
 
   return (
     <div className='py-5 px-5 md:px-12 lg:px-28'>
       <div className='flex justify-between items-center'>
         <Image src={assets.logo} width={180} alt='' className='w-[130px] sm:w-auto'/>
-        <button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]'>Empezar <Image src={assets.arrow}/></button>        
+        <button
+          onClick={handleRedirect}
+          className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]'
+        >
+          Empezar <Image src={assets.arrow} />
+        </button>        
       </div>
       <div className='text-center my-8'>
         <h1 className='text-3xl sm:text-5xl font-medium'>Últimos blogs</h1>
