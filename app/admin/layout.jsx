@@ -1,9 +1,7 @@
 'use client';
 
 import { assets } from "@/Assets/assets";
-import Sidebar from "@/Components/AdminComponents/Sidebar";
 import Image from "next/image";
-import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -13,7 +11,6 @@ export default function Layout({ children }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Verificar si el usuario está autenticado
     const isAuthenticated = true;
 
     if (!isAuthenticated) {
