@@ -6,21 +6,19 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 
 const page = () => {
-
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
-    title:"",
-    description:"",
-    category:"Startup",
-    author:"Johan Cano",
-    authorImg:"/author_img.png"
+    title: "",
+    description: "",
+    category: "Startup",
+    author: "Johan Cano",
+    authorImg: "/author_img.png"
   });
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setData(data => ({...data, [name] : value}));
-    console.log(data);
+    setData(data => ({ ...data, [name]: value }));
   }
 
   const onSubmitHandler = async (e) => {
@@ -32,48 +30,87 @@ const page = () => {
     formData.append('author', data.author);
     formData.append('authorImg', data.authorImg);
     formData.append('image', image);
-    
+
     const response = await axios.post('/api/blog', formData);
     if (response.data.success) {
       toast.success(response.data.msg);
       setImage(false);
       setData({
-        title:"",
-        description:"",
-        category:"Startup",
-        author:"Johan Cano",
-        authorImg:"/author_img.png"
+        title: "",
+        description: "",
+        category: "Startup",
+        author: "Johan Cano",
+        authorImg: "/author_img.png"
       });
-    }
-    else {
+    } else {
       toast.error("¡Error!")
     }
   }
 
   return (
-    <>
-      <form onSubmit={onSubmitHandler} className='pt-5 px-5 sm:pt-12 sm:pl-16'>
-        <p className='text-xl'>Cargar Miniatura</p>
-        <label htmlFor="image">
-          <Image className='mt-4' src={!image?assets.upload_area:URL.createObjectURL(image)} width={140} height={70} alt='' />
+    <div className="bg-gray-50 min-h-screen p-5 sm:p-12 flex justify-center items-center">
+      <form onSubmit={onSubmitHandler} className="bg-white shadow-lg rounded-lg p-6 max-w-lg w-full">
+        <p className="text-2xl font-semibold text-gray-700">Cargar Miniatura</p>
+        <label htmlFor="image" className="block mt-4 cursor-pointer">
+          <Image
+            className="rounded-md border"
+            src={!image ? assets.upload_area : URL.createObjectURL(image)}
+            width={140}
+            height={70}
+            alt="Upload area"
+          />
         </label>
-        <input onChange={(e) => setImage(e.target.files[0])} type="file" id='image' hidden required />  
-        <p className='text-xl mt-4'>Título del Blog</p>
-        <input name='title' onChange={onChangeHandler} value={data.title} className='w-full sm:w-[500px] mt-4 px-4 py-3 border' type="text" placeholder='Escribe aquí' required />
-        <p className='text-xl mt-4'>Descripción del Blog</p>
-        <textarea name='description' onChange={onChangeHandler} value={data.description} className='w-full sm:w-[500px] mt-4 px-4 py-3 border' type="text" placeholder='Escribe el contenido aquí' rows={6} required />
-        <p className='text-xl mt-4'>Categoría</p>
-        <select name="category" onChange={onChangeHandler} value={data.category} className='w-40 mt-4 px-4 py-3 border text-gray-500'>
+        <input
+          onChange={(e) => setImage(e.target.files[0])}
+          type="file"
+          id="image"
+          hidden
+          required
+        />
+
+        <p className="text-xl font-semibold text-gray-700 mt-6">Título del Blog</p>
+        <input
+          name="title"
+          onChange={onChangeHandler}
+          value={data.title}
+          className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          type="text"
+          placeholder="Escribe aquí"
+          required
+        />
+
+        <p className="text-xl font-semibold text-gray-700 mt-6">Descripción del Blog</p>
+        <textarea
+          name="description"
+          onChange={onChangeHandler}
+          value={data.description}
+          className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Escribe el contenido aquí"
+          rows={6}
+          required
+        />
+
+        <p className="text-xl font-semibold text-gray-700 mt-6">Categoría</p>
+        <select
+          name="category"
+          onChange={onChangeHandler}
+          value={data.category}
+          className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+        >
           <option value="Startup">Startup</option>
           <option value="Tecnología">Tecnología</option>
           <option value="Estilo de Vida">Estilo de Vida</option>
         </select>
-        <br />
-        <button type='submit' className='mt-8 w-40 h-12 bg-black text-white'>Agregar</button>
-      </form>
-    </>
-  )
 
+        <button
+          type="submit"
+          className="mt-8 w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
+        >
+          Agregar
+        </button>
+      </form>
+    </div>
+  );
 }
 
-export default page
+export default page;
