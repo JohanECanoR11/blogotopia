@@ -1,11 +1,13 @@
-'use client'
-import BlogTableItem from '@/Components/AdminComponents/BlogTableItem'
+'use client';
+import { useRouter } from 'next/navigation';
+import BlogTableItem from '@/Components/AdminComponents/BlogTableItem';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
-const page = () => {
+const Page = () => {
   const [blogs, setBlogs] = useState([]);
+  const router = useRouter();
 
   const fetchBlogs = async () => {
     const response = await axios.get('/api/blog');
@@ -62,8 +64,14 @@ const page = () => {
           </tbody>
         </table>
       </div>
+      <button
+        onClick={() => router.push('/admin')}
+        className="mt-4 py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition duration-300"
+      >
+        Regresar
+      </button>
     </div>
   )
 }
 
-export default page;
+export default Page;

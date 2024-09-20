@@ -1,11 +1,12 @@
-'use client'
-import { assets } from '@/Assets/assets'
-import axios from 'axios'
-import Image from 'next/image'
-import React, { useState } from 'react'
-import { toast } from 'react-toastify'
+'use client';
+import { useRouter } from 'next/navigation';
+import { assets } from '@/Assets/assets';
+import axios from 'axios';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
-const page = () => {
+const Page = () => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     title: "",
@@ -14,6 +15,8 @@ const page = () => {
     author: "Johan Cano",
     authorImg: "/author_img.png"
   });
+  
+  const router = useRouter();
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
@@ -48,7 +51,7 @@ const page = () => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen p-5 sm:p-12 flex justify-center items-center">
+    <div className="bg-gray-50 min-h-screen p-5 sm:p-12 flex flex-col items-center">
       <form onSubmit={onSubmitHandler} className="bg-white shadow-lg rounded-lg p-6 max-w-lg w-full">
         <p className="text-2xl font-semibold text-gray-700">Cargar Miniatura</p>
         <label htmlFor="image" className="block mt-4 cursor-pointer">
@@ -109,8 +112,14 @@ const page = () => {
           Agregar
         </button>
       </form>
+      <button
+        onClick={() => router.push('/admin')}
+        className="mt-4 py-2 px-4 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition duration-300"
+      >
+        Regresar
+      </button>
     </div>
   );
 }
 
-export default page;
+export default Page;
